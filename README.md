@@ -16,6 +16,10 @@ receive a scored report with strengths, weaknesses, and a personalized plan.
 
 </div>
 
+[🚀 Live Demo Frontend](https://ai-interview-platform-eosin.vercel.app)
+<br>
+[Backend](https://ai-interview-platform-atej.onrender.com)
+
 ---
 
 ## ✨ Overview
@@ -175,7 +179,7 @@ Environment variables are documented in:
 
 > The OAuth callback lands on the **backend**, which then redirects the SPA with
 > tokens in the URL fragment — no cross-site cookies, reliable on localhost.
-
+<!-- 
 ## 🧪 Testing
 
 ```bash
@@ -194,7 +198,7 @@ tests and the frontend type-check/build on every push and PR.
 - **Frontend → Vercel**: [`frontend/vercel.json`](frontend/vercel.json) (Vite
   build + SPA rewrites). Set variables per [`frontend/.env.dep`](frontend/.env.dep).
 - After both are live, set the backend's `FRONTEND_URL` + `CORS_ALLOWED_ORIGINS`
-  to the Vercel URL, and register the backend callback in Google.
+  to the Vercel URL, and register the backend callback in Google. -->
 
 ## 📚 API
 
@@ -218,6 +222,6 @@ Full specifications live in [`docs/`](docs/) — start with
 [API design](docs/05-api-design/) ·
 [conversational interview](docs/03-architecture/conversational-interview.md).
 
-## 📝 License
+<!-- ## 📝 License
 
-Add a `LICENSE` file (e.g. MIT) if you intend to open-source this project.
+Add a `LICENSE` file (e.g. MIT) if you intend to open-source this project. -->
