@@ -1,0 +1,43 @@
+# ---------------------------------------------------------------------------
+# AI Career Interview Platform - Backend Dependencies
+#
+# Version 1 stack (see docs/02-tech-stack/backend-stack.md).
+# Curated top-level dependencies, pinned. Upgrade via ADR only.
+# For an exact snapshot of the full resolved tree, use:
+#   python -m pip freeze | Out-File -Encoding utf8 requirements.lock.txt
+# ---------------------------------------------------------------------------
+
+# --- Web framework / ASGI ---------------------------------------------------
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+python-multipart==0.0.20
+
+# --- Validation / configuration ---------------------------------------------
+pydantic==2.10.4
+pydantic-settings==2.7.1
+email-validator==2.2.0
+
+# --- Database / ORM / migrations --------------------------------------------
+sqlalchemy[asyncio]==2.0.36
+asyncpg==0.30.0
+alembic==1.14.0
+greenlet==3.1.1
+
+# --- Authentication / security ----------------------------------------------
+python-jose[cryptography]==3.3.0
+google-auth==2.37.0
+httpx==0.28.1
+
+# --- AI provider ------------------------------------------------------------
+groq==0.15.0
+
+# --- File processing --------------------------------------------------------
+pymupdf==1.25.1
+python-docx==1.1.2
+reportlab==4.2.5
+
+# --- Object storage (optional, S3-compatible / Cloudflare R2) ---------------
+boto3==1.35.90
+
+# --- Observability ----------------------------------------------------------
+python-json-logger==3.2.1

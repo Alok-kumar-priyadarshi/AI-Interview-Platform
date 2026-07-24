@@ -1,0 +1,12 @@
+# Railway deployment configuration (docs/08-deployment/backend-deployment.md).
+# Migrations run before the app starts; liveness gates traffic.
+
+[build]
+builder = "nixpacks"
+
+[deploy]
+startCommand = "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"
+healthcheckPath = "/api/v1/health/live"
+healthcheckTimeout = 100
+restartPolicyType = "on_failure"
+restartPolicyMaxRetries = 3

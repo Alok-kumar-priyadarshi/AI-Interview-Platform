@@ -1,0 +1,48 @@
+[project]
+name = "ai-career-interview-backend"
+version = "1.0.0"
+description = "FastAPI backend for the AI Career Interview Platform"
+requires-python = ">=3.13"
+
+# ---------------------------------------------------------------------------
+# Tooling configuration. Dependencies are managed via requirements*.txt
+# (pip, per docs/02-tech-stack/backend-stack.md), not the [project] table.
+# ---------------------------------------------------------------------------
+
+[tool.ruff]
+line-length = 100
+target-version = "py313"
+src = ["app", "tests"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "C4", "SIM", "N"]
+ignore = [
+    "B008",  # FastAPI uses function calls in argument defaults (Depends())
+    "N818",  # AppException is an intentional base-class name (no Error suffix)
+]
+
+[tool.ruff.lint.isort]
+known-first-party = ["app"]
+
+[tool.black]
+line-length = 100
+target-version = ["py313"]
+
+[tool.mypy]
+python_version = "3.13"
+plugins = ["pydantic.mypy"]
+warn_unused_ignores = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+addopts = "-ra --strict-markers"
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.coverage.run]
+source = ["app"]
+omit = ["app/main.py", "*/tests/*"]
