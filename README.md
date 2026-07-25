@@ -6,7 +6,6 @@
 Upload your resume → get a tailored interview → answer by **voice or text** →
 receive a scored report with strengths, weaknesses, and a personalized plan.
 
-[![CI](https://img.shields.io/badge/CI-GitHub_Actions-2088FF?logo=githubactions&logoColor=white)](.github/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi&logoColor=white)
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
@@ -17,7 +16,7 @@ receive a scored report with strengths, weaknesses, and a personalized plan.
 </div>
 
 [🚀 Live Demo Frontend](https://ai-interview-platform-eosin.vercel.app)
-<br>
+<br><br>
 [Backend](https://ai-interview-platform-atej.onrender.com)
 
 ---
@@ -85,14 +84,13 @@ testing, and deployment.
 
 | Layer      | Technology                                                        |
 | ---------- | ----------------------------------------------------------------- |
-| Frontend   | React 19 · Vite · TypeScript · Tailwind CSS · React Router · Axios · Recharts |
-| Backend    | FastAPI · Python 3.13 · Pydantic v2 · async SQLAlchemy 2 · Alembic |
+| Frontend   | React · Vite · TypeScript · Tailwind CSS · React Router · Axios · Recharts |
+| Backend    | FastAPI · Python · Pydantic · async SQLAlchemy · Alembic |
 | Database   | PostgreSQL                                                        |
 | AI         | Groq — LLM (Llama 3.3) + Whisper transcription                    |
-| Speech     | Browser SpeechSynthesis (TTS) · MediaRecorder + Whisper (STT)    |
+| Speech     | Whisper    |
 | Auth       | Google OAuth 2.0 + JWT                                            |
-| Storage    | Local filesystem or S3-compatible (Cloudflare R2)               |
-| Deployment | Railway (backend) · Vercel (frontend) · GitHub Actions (CI)     |
+
 
 ## 🏗️ Architecture
 
@@ -104,7 +102,7 @@ flowchart LR
     R --> DB[(PostgreSQL)]
     S --> AI[AI Service<br/>provider-agnostic]
     AI --> G[Groq LLM + Whisper]
-    S --> ST[Storage<br/>local / R2]
+    S --> ST[Storage<br/>local ]
     U -->|OAuth redirect| GO[Google OAuth]
     GO --> A
 ```
