@@ -5,13 +5,7 @@
 **Practice mock interviews with an AI interviewer that _talks_ to you.**
 Upload your resume → get a tailored interview → answer by **voice or text** →
 receive a scored report with strengths, weaknesses, and a personalized plan.
-<!-- 
-![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi&logoColor=white)
-![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
-![Tailwind](https://img.shields.io/badge/Tailwind-3-06B6D4?logo=tailwindcss&logoColor=white)
-![Groq](https://img.shields.io/badge/AI-Groq-F55036) -->
+
 
 </div>
 
@@ -110,18 +104,6 @@ flowchart LR
 The backend is a **layered modular monolith**: API → Service → Repository →
 Database, with external providers (Groq, Google, storage) behind adapters.
 
-## 📂 Repository layout
-
-```
-.
-├── docs/         # Source-of-truth documentation (requirements → deployment)
-├── claude/       # AI development operating system (constitution, workflows)
-├── context/      # Evolving project context (state, progress, changelog)
-├── backend/      # FastAPI application  (see backend/README.md)
-├── frontend/     # React SPA            (see frontend/README.md)
-├── images/       # README screenshots
-└── .github/      # CI workflows
-```
 
 ## 🛠️ Getting started
 
@@ -177,26 +159,6 @@ Environment variables are documented in:
 
 > The OAuth callback lands on the **backend**, which then redirects the SPA with
 > tokens in the URL fragment — no cross-site cookies, reliable on localhost.
-<!-- 
-## 🧪 Testing
-
-```bash
-cd backend && pytest            # 64 tests: models, security, AI, all API groups
-cd frontend && npm run build    # strict type-check + production build
-```
-
-CI ([`.github/workflows/ci.yml`](.github/workflows/ci.yml)) runs backend lint +
-tests and the frontend type-check/build on every push and PR.
-
-## ☁️ Deployment
-
-- **Backend → Railway**: [`backend/railway.toml`](backend/railway.toml) runs
-  `alembic upgrade head` then Uvicorn; health check at `/api/v1/health/live`.
-  Set variables per [`backend/.env.dep`](backend/.env.dep).
-- **Frontend → Vercel**: [`frontend/vercel.json`](frontend/vercel.json) (Vite
-  build + SPA rewrites). Set variables per [`frontend/.env.dep`](frontend/.env.dep).
-- After both are live, set the backend's `FRONTEND_URL` + `CORS_ALLOWED_ORIGINS`
-  to the Vercel URL, and register the backend callback in Google. -->
 
 ## 📚 API
 
@@ -210,16 +172,3 @@ Questions, Answers, Evaluations, Reports, History, Dashboard, Admin, Health.
 - Streaming neural TTS + real-time partial transcription
 - Adaptive follow-up questions
 - Rate limiting, Sentry monitoring, frontend component tests
-
-## 📖 Documentation
-
-Full specifications live in [`docs/`](docs/) — start with
-[`docs/README.md`](docs/README.md). Notable:
-[architecture](docs/03-architecture/) ·
-[database](docs/04-database/) ·
-[API design](docs/05-api-design/) ·
-[conversational interview](docs/03-architecture/conversational-interview.md).
-
-<!-- ## 📝 License
-
-Add a `LICENSE` file (e.g. MIT) if you intend to open-source this project. -->
