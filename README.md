@@ -5,13 +5,13 @@
 **Practice mock interviews with an AI interviewer that _talks_ to you.**
 Upload your resume → get a tailored interview → answer by **voice or text** →
 receive a scored report with strengths, weaknesses, and a personalized plan.
-
+<!-- 
 ![Python](https://img.shields.io/badge/Python-3.13-3776AB?logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi&logoColor=white)
 ![React](https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=black)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white)
 ![Tailwind](https://img.shields.io/badge/Tailwind-3-06B6D4?logo=tailwindcss&logoColor=white)
-![Groq](https://img.shields.io/badge/AI-Groq-F55036)
+![Groq](https://img.shields.io/badge/AI-Groq-F55036) -->
 
 </div>
 
