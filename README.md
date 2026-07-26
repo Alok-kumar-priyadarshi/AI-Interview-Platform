@@ -23,10 +23,6 @@ with an LLM, generates role-specific questions, conducts a **conversational
 interview** (the interviewer speaks each question aloud), evaluates every answer,
 and produces a downloadable PDF report.
 
-It was built **documentation-first** — the [`docs/`](docs/) tree is the single
-source of truth for requirements, architecture, database, API, security,
-testing, and deployment.
-
 ## 📸 Screenshots
 
 > Add images to [`images/`](images/) (see [images/README.md](images/README.md)).
