@@ -66,8 +66,12 @@ class Settings(BaseSettings):
 
     # --- AI: Groq -----------------------------------------------------------
     GROQ_API_KEY: str
-    GROQ_MODEL: str = "llama-3.3-70b-versatile"
+    GROQ_MODEL: str = "openai/gpt-oss-120b"
     GROQ_TRANSCRIPTION_MODEL: str = "whisper-large-v3"
+    # gpt-oss models are reasoning models: this controls how many reasoning
+    # tokens they spend (low = fastest/cheapest, high = most thorough). It is
+    # forwarded to Groq via ``extra_body`` and ignored by non-reasoning models.
+    GROQ_REASONING_EFFORT: Literal["low", "medium", "high"] = "medium"
     GROQ_TIMEOUT: int = 60
     GROQ_MAX_RETRIES: int = 3
 

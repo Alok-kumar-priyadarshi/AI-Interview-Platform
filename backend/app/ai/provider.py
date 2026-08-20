@@ -78,6 +78,7 @@ class GroqProvider:
     def __init__(self, settings: Settings) -> None:
         self._model = settings.GROQ_MODEL
         self._transcription_model = settings.GROQ_TRANSCRIPTION_MODEL
+        self._reasoning_effort = settings.GROQ_REASONING_EFFORT
         self._timeout = settings.GROQ_TIMEOUT
         self._max_retries = settings.GROQ_MAX_RETRIES
         self._api_key = settings.GROQ_API_KEY
@@ -118,6 +119,12 @@ class GroqProvider:
             payload["max_tokens"] = max_tokens
         if json_mode:
             payload["response_format"] = {"type": "json_object"}
+        # gpt-oss reasoning models accept ``reasoning_effort``. The groq 0.15
+        # SDK does not expose it as a named argument, so it is passed through
+        # ``extra_body``. Reasoning is returned in a separate ``reasoning``
+        # field, so ``message.content`` stays pure JSON for the orchestrator.
+        if self._reasoning_effort:
+            payload["extra_body"] = {"reasoning_effort": self._reasoning_effort}
 
         start = time.perf_counter()
         try:

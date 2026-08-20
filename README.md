@@ -77,7 +77,7 @@ and produces a downloadable PDF report.
 | Frontend   | React · Vite · TypeScript · Tailwind CSS · React Router · Axios · Recharts |
 | Backend    | FastAPI · Python · Pydantic · async SQLAlchemy · Alembic |
 | Database   | PostgreSQL                                                        |
-| AI         | Groq — LLM (Llama 3.3) + Whisper transcription                    |
+| AI         | Groq — LLM (GPT-OSS 120B) + Whisper transcription                 |
 | Speech     | Whisper    |
 | Auth       | Google OAuth 2.0 + JWT                                            |
 
